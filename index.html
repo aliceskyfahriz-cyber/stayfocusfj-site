@@ -96,6 +96,19 @@
   .about-flex{display:grid;grid-template-columns:250px 1fr;gap:24px;align-items:center}
   @media(max-width:720px){.about-flex{grid-template-columns:1fr}.about-img{max-width:250px}}
   .about-img{width:100%;border-radius:12px;border:1px solid var(--line);display:block}
+
+  .galeri-card{grid-column:1/-1}
+  .ggrid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:16px}
+  @media(max-width:720px){.ggrid{grid-template-columns:repeat(3,1fr)}}
+  .ggrid figure{border:1px solid var(--line);border-radius:10px;overflow:hidden;cursor:pointer;background:#000;transition:.2s}
+  .ggrid figure:hover{border-color:var(--yellow);box-shadow:0 0 16px rgba(255,214,10,.25)}
+  .ggrid img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+  .ggrid figcaption{font-size:11px;color:var(--muted);padding:6px 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:50;padding:20px}
+  .lightbox.open{display:flex}
+  .lightbox img{max-width:min(92vw,640px);max-height:82vh;border-radius:12px;border:1px solid #3a3a3a}
+  .lightbox .cap{position:absolute;bottom:26px;left:0;right:0;text-align:center;color:var(--muted);font-size:14px}
+  .lightbox .x{position:absolute;top:14px;right:20px;font-size:30px;color:#fff;cursor:pointer;line-height:1}
   footer{margin-top:72px;border-top:1px solid var(--line);padding:26px 0 34px;color:var(--dim);font-size:13.5px}
   .foot{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
   .foot .sf{letter-spacing:.14em;font-weight:800;color:var(--muted)}
@@ -170,6 +183,12 @@
       </article>
 
     </div>
+
+      <article class="card galeri-card">
+        <h3>Desain Grafis <span class="pill live">Galeri</span></h3>
+        <p>Karya desain di bawah bendera STAYFOCUS × Auto Graph: tipografi, emblem, dan ilustrasi. Ketuk gambar untuk melihatnya lebih besar. Koleksi ini contoh awal — masih terus ditambah.</p>
+        <div class="ggrid" id="galeri-grid"></div>
+      </article>
   </section>
 
   <section id="tentang">
@@ -207,5 +226,28 @@
   </div>
 </footer>
 
+
+<div class="lightbox" id="lightbox"><span class="x" id="lb-x">&times;</span><img id="lb-img" alt="" /><div class="cap" id="lb-cap"></div></div>
+<script src="galeri-1.js"></script>
+<script src="galeri-2.js"></script>
+<script src="galeri-3.js"></script>
+<script src="galeri-4.js"></script>
+<script>
+(function(){
+  var grid=document.getElementById('galeri-grid');
+  var lb=document.getElementById('lightbox'), im=document.getElementById('lb-img'), cap=document.getElementById('lb-cap');
+  (window.GALERI||[]).forEach(function(g){
+    var f=document.createElement('figure');
+    var i=document.createElement('img'); i.src=g.src; i.alt=g.cap; i.loading='lazy';
+    var c=document.createElement('figcaption'); c.textContent=g.cap;
+    f.appendChild(i); f.appendChild(c);
+    f.addEventListener('click',function(){ im.src=g.src; cap.textContent=g.cap; lb.classList.add('open'); });
+    grid.appendChild(f);
+  });
+  function close(){ lb.classList.remove('open'); im.src=''; }
+  document.getElementById('lb-x').addEventListener('click',close);
+  lb.addEventListener('click',function(e){ if(e.target===lb) close(); });
+})();
+</script>
 </body>
 </html>
