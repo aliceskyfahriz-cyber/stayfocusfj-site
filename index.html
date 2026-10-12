@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fahriz Jaelani — stayfocusfj.com</title>
+<meta name="description" content="Fahriz Jaelani — Purchasing di PT Sumber Mitra Restoratama & mahasiswa Sistem Informasi Manajemen Universitas Terbuka. Rumah bagi proyek Kontruang, Mission Control, dan AutographFJ." />
+<meta name="theme-color" content="#0a0a0a" />
+<meta property="og:title" content="Fahriz Jaelani — STAY FOCUS" />
+<meta property="og:description" content="Portofolio & proyek: Kontruang, Mission Control, AutographFJ, VTuber 3D." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://stayfocusfj.com/" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0a0a'/%3E%3Ctext x='32' y='44' font-family='Arial,sans-serif' font-size='34' font-weight='700' fill='%23ffd60a' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E" />
+<style>
+  :root{
+    --bg:#0a0a0a; --bg2:#111111; --card:#141414; --line:#262626;
+    --txt:#f2f2f2; --muted:#a3a3a3; --dim:#6b6b6b;
+    --yellow:#ffd60a; --yellow-soft:rgba(255,214,10,.12);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--txt);font-family:"Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  /* ---------- nav ---------- */
+  header{position:sticky;top:0;z-index:10;background:rgba(10,10,10,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{font-weight:800;letter-spacing:.14em;font-size:15px}
+  .brand b{color:var(--yellow);text-shadow:0 0 14px rgba(255,214,10,.55)}
+  .brand span{color:var(--muted);font-weight:600}
+  .nav nav{display:flex;gap:22px;font-size:14px;color:var(--muted)}
+  .nav nav a:hover{color:var(--txt)}
+  @media(max-width:560px){.nav nav{gap:14px;font-size:13px}}
+
+  /* ---------- hero ---------- */
+  .hero{padding:84px 0 64px;text-align:center;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(560px 260px at 50% 0%,var(--yellow-soft),transparent 70%);pointer-events:none}
+  .badge{display:inline-block;border:1px solid var(--line);background:var(--bg2);color:var(--muted);border-radius:999px;padding:5px 14px;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase}
+  .badge i{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--yellow);box-shadow:0 0 10px var(--yellow);margin-right:8px;vertical-align:1px}
+  h1{font-size:clamp(38px,7vw,64px);line-height:1.08;font-weight:850;letter-spacing:-.01em;margin:22px 0 10px}
+  h1 .glow{color:var(--yellow);text-shadow:0 0 22px rgba(255,214,10,.45)}
+  .tagline{font-size:clamp(17px,2.6vw,21px);color:var(--txt);font-weight:600}
+  .roles{margin-top:10px;color:var(--muted);font-size:15px}
+  .roles b{color:#d4d4d4;font-weight:600}
+  .cta{margin-top:30px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:650;font-size:14.5px;border:1px solid var(--line);background:var(--bg2);transition:.2s}
+  .btn:hover{border-color:#3d3d3d;transform:translateY(-1px)}
+  .btn.primary{background:var(--yellow);color:#111;border-color:var(--yellow);box-shadow:0 0 24px rgba(255,214,10,.28)}
+  .btn.primary:hover{box-shadow:0 0 34px rgba(255,214,10,.45)}
+
+  .strip{margin:52px auto 0;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .chip{border:1px solid var(--line);background:var(--bg2);border-radius:10px;padding:8px 14px;font-size:13px;color:var(--muted)}
+  .chip b{color:var(--txt);font-weight:650}
+  .chip .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#4ade80;margin-right:7px;vertical-align:2px}
+
+  /* ---------- sections ---------- */
+  section{padding:56px 0 8px}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:22px}
+  .sec-head h2{font-size:24px;font-weight:800;letter-spacing:-.01em}
+  .sec-head .no{color:var(--yellow);font-size:13px;font-weight:700;letter-spacing:.15em}
+  .sec-head p{color:var(--muted);font-size:14.5px;margin-left:auto;text-align:right}
+  @media(max-width:640px){.sec-head p{display:none}}
+
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  @media(max-width:720px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;transition:.2s;position:relative}
+  .card:hover{border-color:#3a3a3a;box-shadow:0 0 0 1px #2c2c2c,0 10px 34px rgba(0,0,0,.5)}
+  .card h3{font-size:19px;font-weight:750;display:flex;align-items:center;gap:10px}
+  .card p{color:var(--muted);font-size:14.5px;margin-top:8px;min-height:66px}
+  .pill{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:999px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+  .pill.live{color:#111;background:var(--yellow);border-color:var(--yellow);box-shadow:0 0 14px rgba(255,214,10,.35)}
+  .pill.priv{color:#d4d4d4}
+  .card .link{margin-top:14px;display:inline-block;font-size:14px;font-weight:650;color:var(--yellow)}
+  .card .link:hover{text-decoration:underline}
+  .card .nolink{margin-top:14px;display:inline-block;font-size:14px;color:var(--dim)}
+
+  .about{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;color:var(--muted);font-size:15.5px}
+  .about b{color:var(--txt)}
+
+  .contact{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  @media(max-width:720px){.contact{grid-template-columns:1fr}}
+  .contact a{display:block;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 22px;transition:.2s}
+  .contact a:hover{border-color:#3a3a3a}
+  .contact small{display:block;color:var(--dim);font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+  .contact strong{font-size:16.5px;font-weight:700}
+
+  footer{margin-top:72px;border-top:1px solid var(--line);padding:26px 0 34px;color:var(--dim);font-size:13.5px}
+  .foot{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .foot .sf{letter-spacing:.14em;font-weight:800;color:var(--muted)}
+  .foot .sf b{color:var(--yellow)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">STAY<b>◆</b><span>FOCUS</span></div>
+    <nav>
+      <a href="#proyek">Proyek</a>
+      <a href="#tentang">Tentang</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <span class="badge"><i></i>stayfocusfj.com</span>
+    <h1>Fahriz Jaelani<br /><span class="glow">Stay Focus.</span></h1>
+    <p class="tagline">Membangun alat digital yang kepakai beneran — dari kontrol uang sampai dashboard monitoring.</p>
+    <p class="roles"><b>Purchasing</b> — PT Sumber Mitra Restoratama &nbsp;·&nbsp; <b>Mahasiswa Sistem Informasi Manajemen</b> — Universitas Terbuka</p>
+    <div class="cta">
+      <a class="btn primary" href="#proyek">Lihat Proyek</a>
+      <a class="btn" href="mailto:halo@stayfocusfj.com">halo@stayfocusfj.com</a>
+    </div>
+    <div class="strip">
+      <span class="chip"><span class="dot"></span><b>kontruang</b>.stayfocusfj.com</span>
+      <span class="chip"><span class="dot"></span><b>mc</b>.stayfocusfj.com</span>
+      <span class="chip"><span class="dot"></span>email <b>@stayfocusfj.com</b></span>
+    </div>
+  </div>
+
+  <section id="proyek">
+    <div class="sec-head">
+      <span class="no">01</span><h2>Proyek</h2>
+      <p>Sebagian live &amp; bisa dibuka,<br />sebagian masih di dapur.</p>
+    </div>
+    <div class="grid">
+
+      <article class="card">
+        <h3>Kontruang <span class="pill live">Live</span></h3>
+        <p>Aplikasi kontrol uang pribadi: catat pemasukan &amp; pengeluaran, anggaran, dompet, dan tagihan berulang. Web app (PWA) — bisa diinstall di HP, jalan offline, data tersimpan lokal dan bisa di-backup.</p>
+        <a class="link" href="https://kontruang.stayfocusfj.com" target="_blank" rel="noopener">Buka Kontruang →</a>
+      </article>
+
+      <article class="card">
+        <h3>Mission Control <span class="pill priv">Privat</span></h3>
+        <p>Dashboard pemantau tim AI agent: status kerja, antrean tugas, dan kendali misi dalam satu layar 3D — bisa dibuka dari HP di mana saja, dilindungi login khusus pemilik.</p>
+        <a class="link" href="https://mc.stayfocusfj.com" target="_blank" rel="noopener">mc.stayfocusfj.com →</a>
+      </article>
+
+      <article class="card">
+        <h3>AutographFJ <span class="pill">Capstone</span></h3>
+        <p>Proyek Capstone perkuliahan: sistem monitoring poin teknisi IndiHome (Technician Point Monitoring) — pencatatan &amp; pemantauan kinerja teknisi berbasis web.</p>
+        <span class="nolink">Dalam pengembangan</span>
+      </article>
+
+      <article class="card">
+        <h3>VTuber 3D Fahriz <span class="pill">Proses</span></h3>
+        <p>Avatar 3D anime (VRM) mirip diri sendiri untuk OBS, Zoom, dan panggilan video — face tracking via webcam, karakter dibangun dengan VRoid Studio.</p>
+        <span class="nolink">Dalam pengembangan</span>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="tentang">
+    <div class="sec-head">
+      <span class="no">02</span><h2>Tentang</h2>
+    </div>
+    <div class="about">
+      <p>Saya <b>Fahriz Jaelani</b> — bekerja sebagai <b>Purchasing di PT Sumber Mitra Restoratama</b> (sebelumnya Stock Keeper di Bubur Kwang Tung) sambil menyelesaikan kuliah <b>Sistem Informasi Manajemen di Universitas Terbuka</b>. Di luar jam kerja saya membangun proyek web sendiri: aplikasi keuangan pribadi, dashboard monitoring, dan Capstone monitoring teknisi. Minat saya seputar pengembangan web, modding, dan teknologi yang bisa langsung dipakai sehari-hari. Prinsipnya satu: <b>stay focus</b>.</p>
+    </div>
+  </section>
+
+  <section id="kontak">
+    <div class="sec-head">
+      <span class="no">03</span><h2>Kontak</h2>
+      <p>Email adalah jalur tercepat.</p>
+    </div>
+    <div class="contact">
+      <a href="mailto:fahriz@stayfocusfj.com"><small>Email utama</small><strong>fahriz@stayfocusfj.com</strong></a>
+      <a href="mailto:halo@stayfocusfj.com"><small>Email sapa</small><strong>halo@stayfocusfj.com</strong></a>
+      <a href="https://github.com/aliceskyfahriz-cyber" target="_blank" rel="noopener"><small>GitHub</small><strong>aliceskyfahriz-cyber</strong></a>
+      <a href="https://instagram.com/fahriz_101" target="_blank" rel="noopener"><small>Instagram</small><strong>@fahriz_101</strong></a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Fahriz Jaelani — stayfocusfj.com</span>
+    <span class="sf">STAY<b>◆</b>FOCUS</span>
+    <span>GitHub Pages · Cloudflare</span>
+  </div>
+</footer>
+
+</body>
+</html>
